@@ -9,7 +9,7 @@ const images = [
     },
     {
         url:
-            "https://images.unsplash.com/photo-1512636618879-bbe79107e9e3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd9460ee6d1ddbb6b1ca7be86dfc4590&auto=format&fit=crop&w=1825&q=80",
+            "https://c402277.ssl.cf1.rackcdn.com/photos/18360/images/carousel_small/African_White_Rhino_WW2131989.jpg?1576699245",
         title: "Rhino Family",
         description: "Mother (or father) rhino with two babies",
         keyword: "rhino",
@@ -25,7 +25,7 @@ const images = [
     },
     {
         url:
-            "https://images.unsplash.com/photo-1518946222227-364f22132616?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4836a6fca62e7dce9324346bacfde085&auto=format&fit=crop&w=2534&q=80",
+            "https://i.redd.it/1r1gyji69ms41.jpg",
         title: "UniLego",
         description: "Lego figurine dressed in a unicorn outfit",
         keyword: "unilego",
@@ -57,7 +57,7 @@ const images = [
     },
     {
         url:
-            "https://vignette.wikia.nocookie.net/landbeforetime/images/c/c3/Cera_infobox.png/revision/latest?cb=20180422005003",
+            "https://i.pinimg.com/originals/8d/3c/03/8d3c03e1f79377f2a13e3d310cbd8a12.jpg",
         title: "Cera",
         description:
             "Three horns but still, horns. And who doesn't like The Land Before Time?",
@@ -121,7 +121,7 @@ const images = [
     },
     {
         url:
-            "https://cbsnews3.cbsistatic.com/hub/i/r/2013/03/05/5b414225-a645-11e2-a3f0-029118418759/thumbnail/620x350/2d4cf24685b45c22912e64d2004fec8d/Baby_Mouflon_Wild_Sheep.jpg",
+            "https://lh3.googleusercontent.com/proxy/ScbzMFCnFW6S6v5vGkFT2JIrhqYMdFXKSB3f1Qg6SY6rP1IOi8JtPP472hMSaJy51JohRtj1MjRgFyAjZ-dbn03kjsJtuWq59Hnqg51wJInusZQ1_tLy8rlNWzG0v1vzt5TegQ",
         title: "Baby mouflon",
         description: "The cuteness that is a baby mouflon asleep",
         keyword: "mouflon",
@@ -129,7 +129,7 @@ const images = [
     },
     {
         url:
-            "https://cdn0.wideopenpets.com/wp-content/uploads/2016/01/rsz_chameleon-03.jpg",
+            "https://www.thesprucepets.com/thmb/bus_kcBR9rPSZ83x_E_eOUva3KI=/3840x2160/filters:fill(auto,1)/Chameleon-GettyImages-691131955-5894ad7c5f9b5874eefe1b54.jpg",
         title: "Happy Jackson's Chameleon",
         description: "These are really common in Hawaii",
         keyword: "chameleon",

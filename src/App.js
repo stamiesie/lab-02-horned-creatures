@@ -40,7 +40,7 @@ export default class App extends Component {
                             })
 
                         }}>
-                        <option value="">Creatures</option>
+                        <option value="" disabled selected hidden>Creature Type</option>
                         <option value="narwhal">Narwhal</option>
                         <option value="rhino">Rhino</option>
                         <option value="unicorn">Unicorn</option>
@@ -54,7 +54,7 @@ export default class App extends Component {
                         <option value="dragon">Dragon</option>
                     </select>
 
-                    <div className="photo-div">
+                    <div className="image-list">
                         <ImageList images={filteredAnimals} />
                     </div>
                 </div>
