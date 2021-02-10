@@ -9,7 +9,7 @@ export default class App extends Component {
     state = {
         keyword: '',
         horns: '',
-        title: ''
+        title: '',
     }
 
     handleNameChange = (e) => {
@@ -21,10 +21,11 @@ export default class App extends Component {
     }
 
     render() {
-        // filter
+        const { keyword, horns } = this.state;
         const filteredAnimals = images.filter((image) => {
-            console.log(this.state.keyword, image.keyword);
-            if (this.state.keyword === image.keyword) return true;
+            if (!keyword && !horns) return true;
+            console.log(horns, keyword);
+            if (image.keyword === keyword || image.horns === Number(horns)) return true;
 
             return false;
 
@@ -40,7 +41,7 @@ export default class App extends Component {
                             })
 
                         }}>
-                        <option value="" disabled selected hidden>Creature Type</option>
+                        <option value="">Creature Type</option>
                         <option value="narwhal">Narwhal</option>
                         <option value="rhino">Rhino</option>
                         <option value="unicorn">Unicorn</option>
@@ -54,8 +55,23 @@ export default class App extends Component {
                         <option value="dragon">Dragon</option>
                     </select>
 
+                    <select value={this.state.horns}
+                        onChange={(e) => {
+                            this.setState({
+                                horns: e.target.value
+                            })
+                        }}
+                    >
+                        <option value="">Number of Horns</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="100">100</option>
+                    </select>
+
                     <div className="image-list">
-                        <ImageList images={filteredAnimals} />
+                        <ImageList
+                            images={filteredAnimals} />
                     </div>
                 </div>
             </div>
