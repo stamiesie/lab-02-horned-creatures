@@ -4,12 +4,13 @@ import './App.css';
 import ImageList from './image-list.js';
 import images from './data.js';
 import Header from './header.js';
+import Dropdown from './dropdown.js';
 
 export default class App extends Component {
     state = {
         keyword: '',
         horns: '',
-        title: ''
+        title: '',
     }
 
     handleNameChange = (e) => {
@@ -17,46 +18,62 @@ export default class App extends Component {
             keyword:
                 e.target.value
         });
+    }
 
+    handleHornChange = (e) => {
+        this.setState({
+            horns:
+                Number(e.target.value)
+        });
     }
 
     render() {
-        // filter
+
+        const { keyword, horns } = this.state;
         const filteredAnimals = images.filter((image) => {
-            console.log(this.state.keyword, image.keyword);
-            if (this.state.keyword === image.keyword) return true;
+            console.log(image.keyword === keyword);
+            // if no keyword and no horns selected
+            if (!keyword && !horns) return true;
+
+            // if keyword but no horns selected
+            if (keyword && !horns) {
+                if (image.keyword === keyword) return true;
+            }
+            // if horns but no keyword selected
+            if (horns && !keyword) {
+                if (image.horns === horns) return true;
+            }
+            // if both horns and keyword selected
+            if (keyword && horns) {
+                if (image.keyword === keyword && image.horns === horns) return true;
+            }
 
             return false;
-
         });
+        console.log(filteredAnimals);
+
         return (
             <div className="main-page">
                 <Header />
-                <div className="select-menu">
-                    <select value={this.state.keyword}
-                        onChange={(e) => {
-                            this.setState({
-                                keyword: e.target.value
-                            })
+                <Dropdown
+                    currentValue={keyword}
+                    handleChange={this.handleNameChange}
+                    options={['narwhal', 'rhino', 'unicorn', 'unilego', 'triceratops', 'markhor', 'mouflon', 'addax', 'chameleon', 'lizard', 'dragon']}
+                />
 
-                        }}>
-                        <option value="" disabled selected hidden>Creature Type</option>
-                        <option value="narwhal">Narwhal</option>
-                        <option value="rhino">Rhino</option>
-                        <option value="unicorn">Unicorn</option>
-                        <option value="unilego">UniLego</option>
-                        <option value="triceratops">Triceratops</option>
-                        <option value="markhor">Markhor</option>
-                        <option value="mouflon">Mouflon</option>
-                        <option value="addax">Addax</option>
-                        <option value="chameleon">Chameleon</option>
-                        <option value="lizard">Lizard</option>
-                        <option value="dragon">Dragon</option>
-                    </select>
+                <Dropdown
+                    currentValue={horns}
+                    handleChange={this.handleHornChange}
+                    options={[1, 2, 3, 100]}
+                />
+                <div className="select-menu">
 
                     <div className="image-list">
-                        <ImageList images={filteredAnimals} />
+                        <ImageList
+                            images={filteredAnimals}
+                        />
                     </div>
+
                 </div>
             </div>
 
