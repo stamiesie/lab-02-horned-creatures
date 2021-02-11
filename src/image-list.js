@@ -7,7 +7,7 @@ export default class ImageList extends Component {
         return (
             <div>
                 {imageArray.map((image) => {
-                    return <ImageItem key={this.props.title} src={image} />
+                    return <ImageItem key={image.description} src={image} />
                 }
                 )}
             </div>
